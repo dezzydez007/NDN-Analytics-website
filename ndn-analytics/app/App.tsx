@@ -1,6 +1,5 @@
 import React from 'react';
-import Image from 'next/image'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import NavigationBar from './components/NavigationBar';
@@ -17,15 +16,15 @@ const App: React.FC = () => {
     <Router>
       <Header />
       <NavigationBar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/services" component={Services} />
-        <Route path="/partners" component={Partners} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/blog" component={Blog} />
-        <Route path="/portfolio" component={Portfolio} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="services" element={<Services />} />
+        <Route path="partners" element={<Partners />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="blog" element={<Blog />} />
+        <Route path="portfolio" element={<Portfolio />} />
+      </Routes>
       <Footer />
     </Router>
   );
